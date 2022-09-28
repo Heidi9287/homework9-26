@@ -31,9 +31,13 @@ const seedDb = async () => {
     result: "tie",
     playerName: hermione.username,
   });
+  await Games.create({
+    result: "computer",
+    playerName: harry.username,
+  });
 
-  //   console.log((await Players.findAll()).map((players) => players.username));
-  //   console.log((await Games.findAll()).map((games) => games.playerName));
+  console.log((await Players.findAll()).map((players) => players.username));
+  console.log((await Games.findAll()).map((games) => games.playerName));
 };
 
 seedDb();
